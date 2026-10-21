@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISTER - X | Cyber Security Lab</title>
+<style>
+:root{--bg:#07111a;--panel:#0c1b27;--panel2:#102432;--line:#1c3b4b;--green:#39f5a4;--cyan:#54d8ff;--text:#e7f4f7;--muted:#8caab5;--red:#ff657a;--yellow:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#123044 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.sidebar{background:#07131d;border-right:1px solid var(--line);padding:22px 15px;position:sticky;top:0;height:100vh}.brand{display:flex;gap:12px;align-items:center;padding:5px 8px 24px}.logo{width:42px;height:42px;border:1px solid var(--green);display:grid;place-items:center;color:var(--green);font-weight:900;border-radius:12px;box-shadow:0 0 22px #39f5a426}.brand h1{font-size:18px;margin:0;letter-spacing:2px}.brand small{color:var(--muted)}.navlabel{font-size:10px;color:#64828d;letter-spacing:2px;padding:13px 12px 7px}.nav{display:flex;flex-direction:column;gap:5px}.nav button{background:transparent;color:#9bb5bf;border:1px solid transparent;text-align:left;padding:11px 12px;border-radius:9px;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#102a36;color:var(--green);border-color:#1a4853}.nav .ico{width:20px;text-align:center}.sidebottom{position:absolute;bottom:18px;left:18px;right:18px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}.statusdot{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:7px;box-shadow:0 0 9px var(--green)}main{padding:28px;max-width:1500px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase}.topbar h2{font-size:27px;margin:3px 0}.muted{color:var(--muted)}.pill{border:1px solid #245443;color:var(--green);padding:7px 10px;border-radius:99px;font-size:12px;white-space:nowrap}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:linear-gradient(145deg,#0d202c,#0a1822);border:1px solid var(--line);border-radius:14px;padding:19px;min-width:0}.stathead{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.statnum{font-size:28px;font-weight:750;margin:12px 0 4px}.green{color:var(--green)}.cyan{color:var(--cyan)}.yellow{color:var(--yellow)}.red{color:var(--red)}.cols{grid-template-columns:1.4fr 1fr}.card h3{margin:0 0 5px;font-size:16px}.card p{margin:5px 0 14px;color:var(--muted);font-size:13px}.section{display:none}.section.active{display:block}.btn{background:var(--green);border:0;color:#042116;font-weight:750;padding:10px 14px;border-radius:8px}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:#102b39;color:var(--cyan);border:1px solid #285164}.btn.danger{background:#351923;color:#ff9aaa;border:1px solid #723344}.btnrow{display:flex;gap:9px;flex-wrap:wrap}.terminal{background:#030b10;border:1px solid #163b42;border-radius:10px;padding:15px;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9dd8be;min-height:165px;white-space:pre-wrap;overflow-wrap:anywhere}.terminal .dim{color:#557c82}.field{width:100%;background:#07141d;color:var(--text);border:1px solid #244553;border-radius:8px;padding:11px;margin:6px 0 12px;outline:none}.field:focus{border-color:var(--cyan)}label{font-size:12px;color:#a8c1c9}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:600}.badge{font-size:11px;border-radius:5px;padding:4px 7px;background:#173b30;color:var(--green)}.badge.warn{background:#3a3019;color:var(--yellow)}.badge.info{background:#163342;color:var(--cyan)}.meter{height:7px;background:#17313b;border-radius:8px;overflow:hidden;margin:10px 0}.meter span{display:block;height:100%;width:0;background:var(--green);transition:width .25s}.notice{border-left:3px solid var(--yellow);background:#211f17;padding:12px 14px;color:#d6c89a;border-radius:4px;font-size:12px;margin-bottom:15px}.toolgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.result{margin-top:12px;padding:12px;border:1px solid var(--line);background:#08151e;border-radius:8px;min-height:42px;color:#a6c4ce;overflow-wrap:anywhere}.checkrow{display:flex;gap:8px;align-items:center;margin:9px 0;color:#b5cbd1;font-size:13px}.checkrow input{accent-color:var(--green)}.footer{color:#577984;font-size:11px;text-align:center;margin-top:25px}.mobilemenu{display:none}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:12px}.brand{padding-bottom:10px}.nav{display:grid;grid-template-columns:repeat(3,1fr)}.navlabel,.sidebottom{display:none}.nav button{font-size:12px;padding:9px 7px;justify-content:center}.nav .ico{display:none}main{padding:18px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cols{grid-template-columns:1fr}}
+@media(max-width:520px){.topbar{align-items:flex-start;flex-direction:column}.stats,.toolgrid{grid-template-columns:1fr}.nav{grid-template-columns:repeat(2,1fr)}main{padding:13px}.statnum{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">X</div><div><h1>MISTER - X</h1><small>CYBER SECURITY LAB</small></div></div>
+  <div class="navlabel">WORKSPACE</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="scanner"><span class="ico">⌕</span>Security Scanner</button>
+    <button data-page="password"><span class="ico">◈</span>Password Lab</button>
+    <button data-page="phishing"><span class="ico">⚑</span>Phishing Check</button>
+    <button data-page="headers"><span class="ico">⌘</span>Header Analyzer</button>
+    <button data-page="learn"><span class="ico">▤</span>Learning Center</button>
+    <button data-page="logs"><span class="ico">≋</span>Activity Logs</button>
+    <button data-page="about"><span class="ico">ⓘ</span>About / Safety</button>
+  </nav>
+  <div class="sidebottom"><div><span class="statusdot"></span>LOCAL DEMO MODE</div><p>Educational tools only.<br>Use only on systems you own or have permission to test.</p></div>
+</aside>
+<main>
+<header class="topbar"><div><div class="eyebrow">Cyber defense // Learn • Test • Protect</div><h2 id="pageTitle">Security Dashboard</h2><div class="muted" id="pageSub">Ringkasan lab keamanan siber lokal kamu.</div></div><div class="pill"><span class="statusdot"></span>All systems nominal</div></header>
+
+<section class="section active" id="dashboard">
+  <div class="grid stats">
+    <div class="card"><div class="stathead"><span>DEMO MODULES</span><span>◫</span></div><div class="statnum green">06</div><div class="muted">Modul edukasi aktif</div></div>
+    <div class="card"><div class="stathead"><span>LIVE SCANS</span><span>⌕</span></div><div class="statnum cyan" id="scanCount">00</div><div class="muted">Simulasi lokal</div></div>
+    <div class="card"><div class="stathead"><span>THREATS FOUND</span><span>⚑</span></div><div class="statnum yellow" id="threatCount">00</div><div class="muted">Tidak ada koneksi ke target</div></div>
+    <div class="card"><div class="stathead"><span>PROTECTION</span><span>⬡</span></div><div class="statnum green">ON</div><div class="muted">Mode aman aktif</div></div>
+  </div>
+  <div class="grid cols">
+    <div class="card"><h3>System Console</h3><p>Aktivitas demo terbaru dari MISTER - X.</p><div class="terminal" id="dashTerminal"><span class="dim">[boot]</span> MISTER-X Cyber Security Lab v1.0
+[ok] Interface initialized
+[ok] Local demo mode enabled
+[ok] No remote target connection
+[ready] Choose a module from the menu.</div><div class="btnrow" style="margin-top:12px"><button class="btn" onclick="runDemo()">Run system check</button><button class="btn secondary" onclick="go('learn')">Start learning</button></div></div>
+    <div class="card"><h3>Security Checklist</h3><p>Langkah dasar untuk menjaga akun dan perangkat.</p>
+      <div class="checkrow"><input type="checkbox"> Aktifkan autentikasi dua faktor</div>
+      <div class="checkrow"><input type="checkbox"> Gunakan password unik untuk tiap akun</div>
+      <div class="checkrow"><input type="checkbox"> Perbarui sistem dan aplikasi</div>
+      <div class="checkrow"><input type="checkbox"> Cadangkan file penting</div>
+      <div class="checkrow"><input type="checkbox"> Periksa tautan sebelum mengeklik</div>
+      <div class="meter"><span id="checkMeter"></span></div><small class="muted" id="checkText">0 dari 5 langkah selesai</small>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scanner">
+  <div class="notice">Scanner ini hanya melakukan simulasi edukasi di browser. Tidak mengakses jaringan, mencari port, atau menguji situs sungguhan.</div>
+  <div class="grid cols">
+    <div class="card"><h3>Website Security Checklist</h3><p>Masukkan nama domain untuk membuat laporan checklist lokal, bukan pemindaian jaringan.</p><label for="domain">Domain (contoh: example.com)</label><input class="field" id="domain" placeholder="example.com"><div class="btnrow"><button class="btn" onclick="scanDemo()">Run demo scan</button><button class="btn secondary" onclick="clearScan()">Clear</button></div><div class="result" id="scanResult">Hasil scan akan tampil di sini.</div></div>
+    <div class="card"><h3>Checklist yang diperiksa</h3><table class="table"><tr><td>HTTPS</td><td><span class="badge info">Manual check</span></td></tr><tr><td>Security headers</td><td><span class="badge info">Manual check</span></td></tr><tr><td>Software updates</td><td><span class="badge info">Manual check</span></td></tr><tr><td>Backup & access control</td><td><span class="badge info">Manual check</span></td></tr></table><p style="margin-top:15px">Untuk audit sungguhan, lakukan hanya dengan izin pemilik sistem dan gunakan alat profesional yang sesuai.</p></div>
+  </div>
+</section>
+
+<section class="section" id="password">
+  <div class="grid cols">
+    <div class="card"><h3>Password Strength Lab</h3><p>Nilai password dihitung di browser ini. Jangan masukkan password asli yang sedang kamu gunakan.</p><label for="pw">Password contoh</label><input class="field" id="pw" type="password" placeholder="Coba password fiktif..." autocomplete="off"><div class="btnrow"><button class="btn" onclick="checkPassword()">Analyze strength</button><button class="btn secondary" onclick="togglePw()">Show / hide</button><button class="btn secondary" onclick="makePassword()">Generate sample</button></div><div class="meter"><span id="pwMeter"></span></div><div class="result" id="pwResult">Masukkan password contoh untuk melihat hasil.</div></div>
+    <div class="card"><h3>Tips Password</h3><div class="checkrow">✓ Panjang ideal minimal 14 karakter</div><div class="checkrow">✓ Gabungkan beberapa kata yang tidak mudah ditebak</div><div class="checkrow">✓ Hindari nama, tanggal lahir, dan pola umum</div><div class="checkrow">✓ Simpan di password manager tepercaya</div><div class="checkrow">✓ Aktifkan autentikasi dua faktor (2FA)</div><div class="notice" style="margin-top:16px">Generator membuat contoh secara lokal. Tetap buat password penting menggunakan password manager tepercaya.</div></div>
+  </div>
+</section>
+
+<section class="section" id="phishing">
+  <div class="grid cols">
+    <div class="card"><h3>Phishing Awareness Checker</h3><p>Tempelkan URL atau pesan mencurigakan untuk pemeriksaan pola sederhana di perangkat ini.</p><label for="phish">URL atau pesan</label><textarea class="field" id="phish" rows="5" placeholder="Contoh: Akun Anda diblokir! Klik tautan untuk verifikasi..."></textarea><button class="btn" onclick="checkPhishing()">Check suspicious signs</button><div class="result" id="phishResult">Hasil pemeriksaan akan tampil di sini.</div></div>
+    <div class="card"><h3>Tanda-tanda phishing</h3><table class="table"><tr><td>Meminta password / OTP</td><td><span class="badge warn">Bahaya</span></td></tr><tr><td>Bahasa mendesak atau mengancam</td><td><span class="badge warn">Waspada</span></td></tr><tr><td>Domain salah eja / tidak dikenal</td><td><span class="badge warn">Waspada</span></td></tr><tr><td>Hadiah yang tidak masuk akal</td><td><span class="badge warn">Waspada</span></td></tr></table><p>Hasil otomatis bukan bukti pasti. Verifikasi lewat aplikasi atau situs resmi yang kamu ketik sendiri.</p></div>
+  </div>
+</section>
+
+<section class="section" id="headers">
+  <div class="notice">Analyzer ini membaca teks header yang kamu tempelkan sendiri. Tidak mengambil data dari situs atau server mana pun.</div>
+  <div class="card"><h3>HTTP Security Header Analyzer</h3><p>Tempel contoh response headers dari server milikmu.</p><label for="headerInput">Response headers</label><textarea class="field" id="headerInput" rows="7" placeholder="strict-transport-security: max-age=31536000&#10;content-security-policy: default-src 'self'&#10;x-content-type-options: nosniff"></textarea><button class="btn" onclick="analyzeHeaders()">Analyze headers</button><div class="result" id="headerResult">Laporan header akan tampil di sini.</div></div>
+</section>
+
+<section class="section" id="learn">
+  <div class="grid toolgrid">
+    <div class="card"><h3 class="green">01 / Dasar Cyber Security</h3><p>Cyber security melindungi perangkat, jaringan, aplikasi, dan data dari akses yang tidak sah.</p><button class="btn secondary" onclick="showLesson('Dasar keamanan','Mulai dari pembaruan sistem, kunci layar, backup, dan pengaturan privasi. Keamanan adalah kebiasaan yang dilakukan rutin.')">Buka materi</button></div>
+    <div class="card"><h3 class="cyan">02 / Ethical Hacking</h3><p>Pengujian keamanan yang dilakukan dengan izin, ruang lingkup jelas, dan pelaporan bertanggung jawab.</p><button class="btn secondary" onclick="showLesson('Ethical hacking','Selalu dapatkan izin tertulis, tentukan target yang diizinkan, jangan mengambil data pengguna, dan laporkan temuan secara aman.')">Buka materi</button></div>
+    <div class="card"><h3 class="yellow">03 / Social Engineering</h3><p>Memahami cara penipu memanipulasi orang untuk membagikan informasi sensitif.</p><button class="btn secondary" onclick="showLesson('Social engineering','Jangan bagikan OTP, PIN, atau password. Hubungi organisasi melalui kanal resmi bila ada permintaan mendesak.')">Buka materi</button></div>
+    <div class="card"><h3>04 / Incident Response</h3><p>Langkah awal saat akun atau perangkat diduga terkena insiden keamanan.</p><button class="btn secondary" onclick="showLesson('Incident response','Putuskan koneksi bila diperlukan, ganti password dari perangkat tepercaya, aktifkan 2FA, simpan bukti, dan hubungi penyedia layanan atau tim IT.')">Buka materi</button></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3 id="lessonTitle">Pilih materi di atas</h3><div class="result" id="lessonBody">Materi singkat akan muncul di area ini.</div></div>
+</section>
+
+<section class="section" id="logs">
+  <div class="card"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h3>Activity Logs</h3><p>Riwayat aksi demo selama halaman ini terbuka.</p></div><button class="btn danger" onclick="clearLogs()">Clear logs</button></div><table class="table"><thead><tr><th>Waktu</th><th>Aktivitas</th><th>Status</th></tr></thead><tbody id="logBody"><tr><td>—</td><td>Belum ada aktivitas</td><td><span class="badge info">Ready</span></td></tr></tbody></table></div>
+</section>
+
+<section class="section" id="about">
+  <div class="card"><h3>About MISTER - X</h3><p>MISTER - X adalah dashboard demo bertema cyber security untuk belajar konsep keamanan digital dengan aman.</p><div class="notice">PENTING: Website ini tidak memiliki fitur untuk membobol akun, mencuri data, menyebarkan malware, mengeksploitasi target, atau melakukan serangan jaringan.</div><h3>Aturan penggunaan</h3><div class="checkrow">✓ Gunakan pada perangkat dan akun milik sendiri.</div><div class="checkrow">✓ Dapatkan izin sebelum menguji sistem pihak lain.</div><div class="checkrow">✓ Jangan meminta atau menyimpan password, OTP, atau data pribadi orang lain.</div><div class="checkrow">✓ Gunakan pengetahuan untuk melindungi sistem dan melaporkan celah dengan bertanggung jawab.</div><h3 style="margin-top:20px">Teknologi</h3><p>HTML • CSS • JavaScript • berjalan lokal di browser • tanpa backend dan tanpa pengiriman data.</p></div>
+</section>
+<div class="footer">MISTER - X // CYBER SECURITY LAB · EDUCATIONAL DEMO · v1.0</div>
+</main>
+</div>
+<script>
+const titles={dashboard:['Security Dashboard','Ringkasan lab keamanan siber lokal kamu.'],scanner:['Security Scanner','Checklist keamanan berbasis simulasi lokal.'],password:['Password Lab','Evaluasi password contoh langsung di browser.'],phishing:['Phishing Check','Kenali pola pesan dan tautan mencurigakan.'],headers:['Header Analyzer','Periksa header keamanan dari teks yang kamu sediakan.'],learn:['Learning Center','Materi singkat untuk belajar cyber security.'],logs:['Activity Logs','Riwayat aktivitas demo saat ini.'],about:['About / Safety','Tujuan, batasan, dan penggunaan yang bertanggung jawab.']};
+let scans=0, threats=0, logs=[];
+function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id][0];document.getElementById('pageSub').textContent=titles[id][1];window.scrollTo({top:0,behavior:'smooth'});log('Navigasi ke '+titles[id][0],'OPEN')}
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function log(action,status='OK'){logs.unshift({time:new Date().toLocaleTimeString('id-ID'),action,status});logs=logs.slice(0,40);renderLogs()}
+function renderLogs(){const body=document.getElementById('logBody');body.innerHTML=logs.length?logs.map(l=>`<tr><td>${esc(l.time)}</td><td>${esc(l.action)}</td><td><span class="badge ${l.status==='WARN'?'warn':'info'}">${esc(l.status)}</span></td></tr>`).join(''):'<tr><td>—</td><td>Belum ada aktivitas</td><td><span class="badge info">Ready</span></td></tr>'}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function runDemo(){const t=document.getElementById('dashTerminal');t.textContent='[run] Checking local interface...\\n[ok] Navigation modules loaded\\n[ok] Browser-only tools ready\\n[ok] No remote network requests made\\n[done] Demo system check completed.';log('System check demo selesai');}
+function scanDemo(){let d=document.getElementById('domain').value.trim();if(!d){document.getElementById('scanResult').textContent='Masukkan domain contoh terlebih dahulu.';return}if(!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(d)){document.getElementById('scanResult').textContent='Format domain terlihat tidak valid. Contoh: example.com';return}scans++;document.getElementById('scanCount').textContent=String(scans).padStart(2,'0');document.getElementById('scanResult').innerHTML='<strong class="cyan">Demo report for '+esc(d)+'</strong><br>• Koneksi situs: tidak diperiksa oleh halaman ini<br>• HTTPS: periksa manual di browser<br>• Security headers: gunakan menu Header Analyzer<br>• Status: <span class="badge info">Simulasi saja</span>';log('Demo checklist untuk '+d,'DEMO')}
+function clearScan(){document.getElementById('domain').value='';document.getElementById('scanResult').textContent='Hasil scan akan tampil di sini.'}
+function togglePw(){const x=document.getElementById('pw');x.type=x.type==='password'?'text':'password'}
+function makePassword(){const words=['Komet','Bambu','Langit','Kopi','Orbit','Hujan','Pohon','Bintang'];const p=words[Math.floor(Math.random()*words.length)]+Math.floor(Math.random()*9000+1000)+'!'+words[Math.floor(Math.random()*words.length)];document.getElementById('pw').value=p;checkPassword();log('Contoh password dibuat lokal')}
+function checkPassword(){const p=document.getElementById('pw').value;let score=0, tips=[];if(p.length>=14)score++;else tips.push('Tambah panjang hingga 14 karakter atau lebih.');if(/[a-z]/.test(p)&&/[A-Z]/.test(p))score++;else tips.push('Campurkan huruf besar dan kecil.');if(/\d/.test(p))score++;else tips.push('Tambahkan angka jika membantu keunikan.');if(/[^A-Za-z0-9]/.test(p))score++;else tips.push('Gunakan simbol atau beberapa kata acak.');if(/(.)\1{2,}|1234|password|qwerty/i.test(p)){score=Math.max(0,score-1);tips.push('Hindari pola umum atau karakter berulang.')}const labels=['Lemah','Cukup','Sedang','Kuat','Sangat kuat'];const colors=['#ff657a','#ffd166','#ffd166','#39f5a4','#39f5a4'];document.getElementById('pwMeter').style.width=(score/4*100)+'%';document.getElementById('pwMeter').style.background=colors[score];document.getElementById('pwResult').innerHTML='<strong style="color:'+colors[score]+'">'+labels[score]+'</strong><br>'+ (tips.length?tips.map(esc).join('<br>'):'Bagus! Tetap gunakan password unik dan aktifkan 2FA.')+'<br><small>Analisis dilakukan lokal; jangan masukkan password asli.</small>';log('Analisis kekuatan password contoh')}
+function checkPhishing(){const s=document.getElementById('phish').value.trim();if(!s){document.getElementById('phishResult').textContent='Masukkan URL atau pesan contoh terlebih dahulu.';return}const checks=[[/password|kata sandi|otp|pin\b|kode verifikasi/i,'Meminta data sensitif'],[/segera|darurat|dibekukan|diblokir|24 jam|urgent|immediately/i,'Bahasa mendesak / menekan'],[/hadiah|menang|gratis|prize|giveaway|hadiah besar/i,'Iming-iming hadiah'],[/bit\.ly|tinyurl|t\.co|shorturl/i,'Tautan pendek'],[/https?:\/\//i,'Mengandung URL — periksa domain dengan teliti']];const found=checks.filter(x=>x[0].test(s)).map(x=>x[1]);document.getElementById('phishResult').innerHTML='<strong class="'+(found.length?'yellow':'green')+'">'+(found.length?found.length+' tanda perlu diperiksa':'Tidak ada pola umum yang terdeteksi')+'</strong><br>'+(found.length?found.map(x=>'• '+esc(x)).join('<br>'):'Tetap waspada; pesan berbahaya tidak selalu memiliki tanda ini.')+'<br><small>Ini pemeriksaan sederhana, bukan penentu keamanan pasti.</small>';log('Pemeriksaan pola phishing',found.length?'WARN':'OK')}
+function analyzeHeaders(){const s=document.getElementById('headerInput').value.toLowerCase();if(!s.trim()){document.getElementById('headerResult').textContent='Tempelkan contoh header terlebih dahulu.';return}const h=[['strict-transport-security','HSTS'],['content-security-policy','Content-Security-Policy'],['x-content-type-options','X-Content-Type-Options'],['x-frame-options','X-Frame-Options'],['referrer-policy','Referrer-Policy'],['permissions-policy','Permissions-Policy']];let present=h.filter(x=>s.includes(x[0])),missing=h.filter(x=>!s.includes(x[0]));document.getElementById('headerResult').innerHTML='<strong class="green">Ditemukan ('+present.length+')</strong><br>'+(present.length?present.map(x=>'✓ '+x[1]).join('<br>'):'Tidak ada header dari daftar yang terdeteksi')+'<br><br><strong class="yellow">Belum terlihat ('+missing.length+')</strong><br>'+missing.map(x=>'• '+x[1]).join('<br>')+'<br><small>Kebutuhan header bergantung pada aplikasi; evaluasi konfigurasi sebelum mengubahnya.</small>';log('Analisis teks security headers')}
+function showLesson(title,body){document.getElementById('lessonTitle').textContent=title;document.getElementById('lessonBody').textContent=body;log('Membuka materi: '+title)}
+function clearLogs(){logs=[];renderLogs()}
+document.querySelectorAll('.checkrow input[type=checkbox]').forEach(x=>x.addEventListener('change',()=>{const checks=[...document.querySelectorAll('#dashboard .checkrow input')];const n=checks.filter(c=>c.checked).length;document.getElementById('checkMeter').style.width=(n/5*100)+'%';document.getElementById('checkText').textContent=n+' dari 5 langkah selesai'}));
+</script>
+</body>
+</html>
